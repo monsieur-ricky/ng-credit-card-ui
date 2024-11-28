@@ -1,0 +1,42 @@
+.credit-card {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    &__name,
+    &__date {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__name span:first-child,
+    &__date span:first-child {
+      font-size: 0.75em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &__name span:last-child,
+    &__date span:last-child {
+      font-size: 1em;
+    }
+  }
+
+  &--light {
+    .credit-card__number {
+      color: #000;
+    }
+
+    .credit-card__info {
+      color: #000;
+      &__name span:first-child,
+      &__date span:first-child {
+        font-size: 0.75em;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    img {
+      filter: invert(1);
+    }
+  }
+}

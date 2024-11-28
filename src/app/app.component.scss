@@ -1,0 +1,90 @@
+main {
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    &:last-of-type {
+      justify-content: start;
+    }
+
+    @media (max-width: 1000px) {
+      justify-content: center;
+
+      &:last-of-type {
+        justify-content: center;
+      }
+    }
+  }
+
+  form {
+    width: 300px;
+
+    fieldset {
+      border-radius: 0.65rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      .field-items {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        label {
+          margin-bottom: 5px;
+          font-size: 0.85rem;
+        }
+
+        input,
+        select {
+          padding: 0.5rem;
+          font-size: 1rem;
+          border: 1px solid #fff;
+          border-radius: 5px;
+          transition: all ease-in-out 0.2s;
+
+          &:hover,
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 6px rgba(71, 61, 189, 0.5);
+          }
+
+          &:focus {
+            border-color: #473dbd;
+          }
+        }
+
+        select {
+          appearance: none;
+          cursor: pointer;
+          background: #f0f0f0
+            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>')
+            no-repeat right 0.75rem center;
+          background-size: 1.2rem;
+        }
+
+        &__expiration-info {
+          display: flex;
+          justify-content: start;
+          gap: 1rem;
+
+          select {
+            width: 5.3rem;
+
+            &:first-of-type {
+              width: 4.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

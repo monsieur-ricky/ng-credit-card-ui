@@ -1,0 +1,7 @@
+<div class="credit-card" [class]="style()">
+  <ngc-credit-card-header [type]="type()" />
+
+  <ngc-credit-card-number [groupedCardNumbers]="groupedCardNumbers()" />
+
+  <ngc-credit-card-info [name]="cardInfo()?.name" [expiration]="expiration()" />
+</div>

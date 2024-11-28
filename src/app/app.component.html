@@ -1,0 +1,60 @@
+<main>
+  <h1>Credit Card UI</h1>
+
+  <div class="grid">
+    <section>
+      <form>
+        <fieldset>
+          <div class="field-items">
+            <label for="name">Name</label>
+            <input name="name" [(ngModel)]="name" />
+          </div>
+
+          <div class="field-items">
+            <label for="number">Card Number</label>
+            <input
+              name="number"
+              maxlength="16"
+              ngcOnlyNumbers
+              [(ngModel)]="number"
+            />
+          </div>
+
+          <div class="field-items">
+            <label for="expiration">Expiration Date</label>
+            <div class="field-items__expiration-info">
+              <select name="month" [(ngModel)]="expMonth">
+                <option [ngValue]="undefined">--</option>
+
+                @for (month of months; track $index) {
+                <option [ngValue]="month">{{ month }}</option>
+                }
+              </select>
+
+              <select name="year" [(ngModel)]="expYear">
+                <option [ngValue]="undefined">--</option>
+
+                @for (year of years; track $index) {
+                <option [ngValue]="year">{{ year }}</option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <div class="field-items">
+            <label for="expiration">Card Style</label>
+            <select name="style" [(ngModel)]="style">
+              @for (style of styles; track $index) {
+              <option [ngValue]="style.value">{{ style.name }}</option>
+              }
+            </select>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <ngc-credit-card [cardInfo]="cardForm()" />
+    </section>
+  </div>
+</main>

@@ -1,0 +1,132 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 135deg;
+}
+
+@property --card-color-1 {
+  syntax: "<color>#";
+  inherits: false;
+  initial-value: rgba(77, 77, 77, 0.8);
+}
+
+@property --card-color-2 {
+  syntax: "<color>#";
+  inherits: false;
+  initial-value: rgba(26, 26, 26, 0.8);
+}
+
+@property --card-color-3 {
+  syntax: "<color>#";
+  inherits: false;
+  initial-value: rgba(26, 26, 26, 0.8);
+}
+
+:host {
+  --cc-width: 480px;
+  --cc-border-radius: 15px;
+  --cc-padding: 25px;
+  --cc-number-font-size: calc(0.071 * var(--cc-width));
+
+  --cc-chip-bg-color: #e0ba5a;
+  --cc-chip-line-color: rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 480px) {
+    --cc-width: 350px;
+    --cc-border-radius: 10px;
+    --cc-padding: 15px;
+  }
+
+  .credit-card {
+    aspect-ratio: 1.74;
+    width: var(--cc-width);
+    border-radius: var(--cc-border-radius);
+    color: #fff;
+    padding: var(--cc-padding);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(var(--angle), var(--card-color-1));
+
+    transition: --angle 1s, --card-color-1 0.8s, --card-color-2 0.8s,
+      --card-color-3 0.8s;
+
+    &--dark {
+      --angle: 135deg;
+      --card-color-1: rgba(77, 77, 77, 0.8), rgba(26, 26, 26, 0.8);
+    }
+
+    &--light {
+      --angle: 135deg;
+      --card-color-1: rgb(230, 230, 230), rgb(199, 199, 199);
+    }
+
+    &--cotton-candy {
+      --angle: 43deg;
+      --card-color-1: #4158d0, #c850c0;
+      --card-color-2: #ffcc70;
+
+      background: linear-gradient(
+        var(--angle),
+        var(--card-color-1),
+        var(--card-color-2)
+      );
+    }
+
+    &--sunset-orange {
+      --angle: 300deg;
+      --card-color-1: #fc9a10, #fa9026;
+    }
+
+    &--sky-blue {
+      --angle: 200deg;
+      --card-color-1: #8bc6ec, #9599e2;
+    }
+
+    &--aqua-pink {
+      --angle: 135deg;
+      --card-color-1: #21d4fd, #b721ff;
+    }
+
+    &--violet-bliss {
+      --angle: 235deg;
+      --card-color-1: #e46be8, #571be2;
+    }
+
+    &--rainbow {
+      --angle: 68.1deg;
+      --card-color-1: rgba(196, 69, 69, 1), rgba(255, 167, 73, 0.82);
+      --card-color-2: rgba(253, 217, 82, 0.82), rgba(107, 225, 108, 0.82);
+      --card-color-3: rgba(107, 169, 225, 0.82), rgba(153, 41, 243, 0.82);
+
+      background: linear-gradient(
+        var(--angle),
+        var(--card-color-1),
+        var(--card-color-2),
+        var(--card-color-3)
+      );
+    }
+
+    &--royal-purple {
+      --angle: 35deg;
+      --card-color-1: rgba(80, 12, 139, 0.87), rgba(161, 10, 144, 0.72);
+    }
+
+    &--midnight-blue {
+      --angle: 235deg;
+      --card-color-1: #494cd4, #030132;
+    }
+
+    &--forest-green {
+      --angle: 100deg;
+      --card-color-1: #003844, #316947;
+    }
+
+    &--crimson-red {
+      --angle: 135deg;
+      --card-color-1: #e70000, #7a0000;
+    }
+  }
+}

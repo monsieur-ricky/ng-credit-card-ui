@@ -1,0 +1,9 @@
+:host {
+  .credit-card__number {
+    font-size: var(--cc-number-font-size);
+    letter-spacing: 2px;
+    display: flex;
+    transform: scaleY(1.3);
+    gap: calc(0.05 * var(--cc-width));
+  }
+}

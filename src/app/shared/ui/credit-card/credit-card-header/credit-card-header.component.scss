@@ -1,0 +1,84 @@
+:host {
+  .credit-card__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__chip {
+      width: 50px;
+      height: 35px;
+      background: var(--cc-chip-bg-color);
+      border: 1px solid var(--cc-chip-line-color);
+      border-radius: 5px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: var(--cc-chip-bg-color);
+        z-index: 2;
+      }
+
+      span {
+        &:first-of-type {
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 35px;
+            height: 1px;
+            background: var(--cc-chip-line-color);
+            transform: translate(-50%, -50%);
+          }
+
+          &::before {
+            top: 40%;
+          }
+
+          &::after {
+            top: 60%;
+          }
+        }
+
+        &:last-of-type {
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 1px;
+            background: var(--cc-chip-line-color);
+            transform: translate(-50%, 0) rotate(90deg);
+          }
+
+          &::before {
+            left: 40%;
+          }
+
+          &::after {
+            left: 60%;
+          }
+        }
+      }
+    }
+
+    &__logo {
+      width: 70px;
+      height: 40px;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: right center;
+      }
+    }
+  }
+}
