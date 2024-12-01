@@ -15,7 +15,7 @@ Try out the live demo: https://monsieur-ricky.github.io/ng-credit-card-ui/
 ## Video Demo
 Watch the video demo below:
 
-[![Credit Card UI Demo](https://img.youtube.com/vi/WCzSrYijJ3k/0.jpg)](https://www.youtube.com/watch?v=WCzSrYijJ3k)
+[![Watch the video](https://img.youtube.com/vi/DlGMc5Xir5I/0.jpg)](https://www.youtube.com/watch?v=DlGMc5Xir5I)
 
 ## Prerequisites
 
