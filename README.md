@@ -10,7 +10,7 @@ A demo project showcasing a **Credit Card UI Component** built with Angular 19. 
 - **Modern CSS Techniques**: CSS `@property` is used to create seamless transitions between different card styles with `background: linear-gradient()`.
 
 ## Live Demo
-Check out the live demo: [Coming Soon]
+Try out the live demo: https://monsieur-ricky.github.io/ng-credit-card-ui/
 
 ## Video Demo
 Watch the video demo below:
