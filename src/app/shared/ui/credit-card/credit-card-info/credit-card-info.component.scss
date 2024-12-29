@@ -19,6 +19,11 @@
     &__date span:last-child {
       font-size: 1em;
     }
+
+    &__name span:last-child {
+      max-width: 23rem;
+      overflow: hidden;
+    }
   }
 
   &--light {
