@@ -17,5 +17,6 @@ export interface CreditCard {
   number: string | undefined;
   expMonth: string | undefined;
   expYear: string | undefined;
+  ccv: string | undefined;
   style?: CreditCardStyle;
 }

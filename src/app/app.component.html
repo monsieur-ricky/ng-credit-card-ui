@@ -42,6 +42,18 @@
           </div>
 
           <div class="field-items">
+            <div class="field-items__ccv">
+              <label for="ccv">CCV</label>
+              <input
+                name="ccv"
+                maxlength="3"
+                ngcOnlyNumbers
+                [(ngModel)]="ccv"
+              />
+            </div>
+          </div>
+
+          <div class="field-items">
             <label for="expiration">Card Style</label>
             <select name="style" [(ngModel)]="style">
               @for (style of styles; track $index) {

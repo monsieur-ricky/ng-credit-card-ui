@@ -71,6 +71,16 @@ main {
           background-size: 1.2rem;
         }
 
+        &__ccv {
+          label {
+            display: block;
+          }
+
+          input {
+            width: 4.1rem;
+          }
+        }
+
         &__expiration-info {
           display: flex;
           justify-content: start;
