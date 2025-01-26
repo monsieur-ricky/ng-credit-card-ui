@@ -1,7 +1,18 @@
-<div class="credit-card" [class]="style()">
-  <ngc-credit-card-header [type]="type()" />
+<div class="credit-card">
+  <div class="credit-card__inner" [class]="style()">
+    <div class="credit-card__inner__front">
+      <ngc-credit-card-header [type]="type()" />
 
-  <ngc-credit-card-number [groupedCardNumbers]="groupedCardNumbers()" />
+      <ngc-credit-card-number [groupedCardNumbers]="groupedCardNumbers()" />
 
-  <ngc-credit-card-info [name]="cardInfo()?.name" [expiration]="expiration()" />
+      <ngc-credit-card-info
+        [name]="cardInfo()?.name"
+        [expiration]="expiration()"
+      />
+    </div>
+
+    <div class="credit-card__inner__back">
+      <ngc-credit-card-back [name]="cardInfo()?.name" [ccv]="cardInfo()?.ccv" />
+    </div>
+  </div>
 </div>

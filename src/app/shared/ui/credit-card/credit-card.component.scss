@@ -38,20 +38,46 @@
   }
 
   .credit-card {
-    aspect-ratio: 1.74;
-    width: var(--cc-width);
-    border-radius: var(--cc-border-radius);
-    color: #fff;
-    padding: var(--cc-padding);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
-    background: linear-gradient(var(--angle), var(--card-color-1));
+    perspective: 1000px;
 
-    transition: --angle 1s, --card-color-1 0.8s, --card-color-2 0.8s,
-      --card-color-3 0.8s;
+    &__inner {
+      aspect-ratio: 1.74;
+      width: var(--cc-width);
+      border-radius: var(--cc-border-radius);
+      color: #fff;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(var(--angle), var(--card-color-1));
+
+      transition: transform 0.6s, --angle 1s, --card-color-1 0.8s,
+        --card-color-2 0.8s, --card-color-3 0.8s;
+      transform-style: preserve-3d;
+
+      &__front,
+      &__back {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: var(--cc-padding);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backface-visibility: hidden;
+      }
+
+      &__back {
+        position: relative;
+        transform: rotateY(180deg);
+      }
+    }
+
+    &:hover {
+      .credit-card__inner {
+        transform: rotateY(180deg);
+      }
+    }
 
     &--dark {
       --angle: 135deg;

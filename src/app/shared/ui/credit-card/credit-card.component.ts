@@ -3,6 +3,7 @@ import { CreditCard } from '../../models/credit-card.interface';
 import { CreditCardHeaderComponent } from './credit-card-header/credit-card-header.component';
 import { CreditCardNumberComponent } from './credit-card-number/credit-card-number.component';
 import { CreditCardInfoComponent } from './credit-card-info/credit-card-info.component';
+import { CreditCardBackComponent } from './credit-card-back/credit-card-back.component';
 
 @Component({
   selector: 'ngc-credit-card',
@@ -10,6 +11,7 @@ import { CreditCardInfoComponent } from './credit-card-info/credit-card-info.com
     CreditCardHeaderComponent,
     CreditCardNumberComponent,
     CreditCardInfoComponent,
+    CreditCardBackComponent,
   ],
   templateUrl: './credit-card.component.html',
   styleUrl: './credit-card.component.scss',

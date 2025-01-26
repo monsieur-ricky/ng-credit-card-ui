@@ -17,6 +17,7 @@ export class AppComponent {
   number = signal<string | undefined>('4242424242424242');
   expMonth = signal<string | undefined>('1');
   expYear = signal<string | undefined>('2030');
+  ccv = signal<string | undefined>('578');
   style = signal<CreditCardStyle>('dark');
 
   cardForm = computed<CreditCard>(() => ({
@@ -24,6 +25,7 @@ export class AppComponent {
     number: this.number(),
     expMonth: this.expMonth(),
     expYear: this.expYear(),
+    ccv: this.ccv(),
     style: this.style(),
   }));
 
