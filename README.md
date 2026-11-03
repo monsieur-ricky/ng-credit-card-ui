@@ -1,6 +1,6 @@
 # Credit Card UI
 
-A demo project showcasing a **Credit Card UI Component** built with Angular 19. This project focuses on using modern Angular practices by **not using Zone.js** for change detection and leveraging the **CSS `@property`** feature for smooth transition effects between different card styles.
+A demo project showcasing a **Credit Card UI Component** built with Angular 22. This project focuses on using modern Angular practices by **not using Zone.js** for change detection and leveraging the **CSS `@property`** feature for smooth transition effects between different card styles.
 
 ## Key Features:
 
@@ -19,8 +19,8 @@ Watch the video demo below:
 
 ## Prerequisites
 
-- **Node.js** (v20.15.0 or higher recommended)
-- **Angular CLI** (v19+)
+- **Node.js 24 LTS** (24.18.0 pinned in `.nvmrc`; run `nvm install` and `nvm use` if using nvm). Angular also supports Node `^22.22.3` or `>=26.0.0`.
+- **npm** (included with Node.js). Angular CLI 22 is installed locally with the project; no global CLI is required.
 - A modern browser that supports CSS `@property` (e.g., Chrome, Edge, or Safari)
 
 
@@ -39,11 +39,36 @@ Watch the video demo below:
 
 3. Start the development server:
    ```bash
-   ng start
+    npm start
    ```
 
 4. Open your browser and navigate to: [http://localhost:4200](http://localhost:4200)
 
+
+## Validation and builds
+
+```bash
+npm ci
+npm audit
+npm run typecheck
+npm test
+npm run build
+npm run build -- --configuration development
+```
+
+The default production build prerenders the home page into `dist/ng-credit-card-ui/browser/`. The checked-in `docs/` directory is the separately published GitHub Pages site and is not automatically updated by a build.
+
+An optional Express 5 server is also available:
+
+```bash
+npm run build -- --configuration production,ssr
+npm run test:ssr
+npm run serve:ssr:ng-credit-card-ui
+```
+
+The server listens on `http://localhost:4000` (or the `PORT` environment variable). For deployment, set `ALLOWED_HOSTS` to a comma-separated list of trusted hostnames (without schemes or ports); the default only permits `localhost` and `127.0.0.1` for SSR. Host validation remains enabled to protect against SSRF. Rebuild with `npm run build` to return to the default static output.
+
+CI runs clean installation, the full dependency audit, type checking, 11 regression tests, static/development/server builds, and a server smoke test (rendering, assets, and untrusted host rejection). Dependabot opens weekly update PRs for npm packages and GitHub Actions. The upgrade plan and validation results are recorded in [UPGRADE_PLAN.md](UPGRADE_PLAN.md).
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request to suggest features, fix bugs, or enhance the demo.

@@ -6,13 +6,13 @@
       <ngc-credit-card-number [groupedCardNumbers]="groupedCardNumbers()" />
 
       <ngc-credit-card-info
-        [name]="cardInfo()?.name"
+        [name]="$safeNavigationMigration(cardInfo()?.name)"
         [expiration]="expiration()"
       />
     </div>
 
     <div class="credit-card__inner__back">
-      <ngc-credit-card-back [name]="cardInfo()?.name" [ccv]="cardInfo()?.ccv" />
+      <ngc-credit-card-back [name]="$safeNavigationMigration(cardInfo()?.name)" [ccv]="$safeNavigationMigration(cardInfo()?.ccv)" />
     </div>
   </div>
 </div>
