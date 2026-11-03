@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CreditCardComponent } from './shared/ui/credit-card/credit-card.component';
 import { FormsModule } from '@angular/forms';
 import { OnlyNumbersDirective } from './shared/directives/only-numbers.directive';
@@ -10,6 +10,7 @@ import {
   selector: 'ngc-root',
   imports: [FormsModule, CreditCardComponent, OnlyNumbersDirective],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {

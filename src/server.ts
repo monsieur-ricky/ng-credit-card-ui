@@ -10,7 +10,11 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
 const app = express();
-const commonEngine = new CommonEngine();
+const allowedHosts = (process.env['ALLOWED_HOSTS'] || 'localhost,127.0.0.1')
+  .split(',')
+  .map((host) => host.trim())
+  .filter(Boolean);
+const commonEngine = new CommonEngine({ allowedHosts });
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -18,7 +22,7 @@ const commonEngine = new CommonEngine();
  *
  * Example:
  * ```ts
- * app.get('/api/**', (req, res) => {
+ * app.get('/api/{*splat}', (req, res) => {
  *   // Handle API request
  * });
  * ```
@@ -28,7 +32,7 @@ const commonEngine = new CommonEngine();
  * Serve static files from /browser
  */
 app.get(
-  '**',
+  '/{*splat}',
   express.static(browserDistFolder, {
     maxAge: '1y',
     index: 'index.html'
@@ -38,7 +42,7 @@ app.get(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.get('**', (req, res, next) => {
+app.get('/{*splat}', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
 
   commonEngine

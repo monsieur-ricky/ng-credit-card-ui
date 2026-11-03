@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, ChangeDetectionStrategy } from '@angular/core';
 import { CreditCard } from '../../models/credit-card.interface';
 import { CreditCardHeaderComponent } from './credit-card-header/credit-card-header.component';
 import { CreditCardNumberComponent } from './credit-card-number/credit-card-number.component';
@@ -14,6 +14,7 @@ import { CreditCardBackComponent } from './credit-card-back/credit-card-back.com
     CreditCardBackComponent,
   ],
   templateUrl: './credit-card.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './credit-card.component.scss',
 })
 export class CreditCardComponent {

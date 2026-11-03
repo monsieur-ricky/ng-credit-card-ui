@@ -73,6 +73,12 @@
               ],
               "outputHashing": "all"
             },
+            "ssr": {
+              "ssr": {
+                "entry": "src/server.ts"
+              },
+              "prerender": false
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -92,6 +98,12 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
