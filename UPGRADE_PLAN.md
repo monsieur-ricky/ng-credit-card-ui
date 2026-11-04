@@ -34,6 +34,8 @@
 - Corrected Express 5 wildcard syntax. Added an explicit optional SSR build configuration so the existing server command has a matching build. Configured trusted SSR hostnames using `ALLOWED_HOSTS` rather than bypassing host validation.
 - Added CI and weekly Dependabot PRs; no auto-merge or deployment workflow was added. The published `docs/` files remain unchanged.
 
+Follow-up (2026-11-04): removed the Dependabot configuration at the maintainer's request to stop scheduled npm and GitHub Actions version-update PRs. CI security audits remain enabled; dependency upgrades are managed manually through reviewed PRs.
+
 Validated locally with Node 24.18.0 / npm 11.16.0:
 
 | Check | Result |
