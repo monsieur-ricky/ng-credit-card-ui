@@ -68,7 +68,7 @@ npm run serve:ssr:ng-credit-card-ui
 
 The server listens on `http://localhost:4000` (or the `PORT` environment variable). For deployment, set `ALLOWED_HOSTS` to a comma-separated list of trusted hostnames (without schemes or ports); the default only permits `localhost` and `127.0.0.1` for SSR. Host validation remains enabled to protect against SSRF. Rebuild with `npm run build` to return to the default static output.
 
-CI runs clean installation, the full dependency audit, type checking, 11 regression tests, static/development/server builds, and a server smoke test (rendering, assets, and untrusted host rejection). Dependabot opens weekly update PRs for npm packages and GitHub Actions. The upgrade plan and validation results are recorded in [UPGRADE_PLAN.md](UPGRADE_PLAN.md).
+CI runs clean installation, the full dependency audit, type checking, 11 regression tests, static/development/server builds, and a server smoke test (rendering, assets, and untrusted host rejection). Scheduled Dependabot version updates are disabled; dependency updates should be proposed manually in PRs and validated before merging. The upgrade plan and validation results are recorded in [UPGRADE_PLAN.md](UPGRADE_PLAN.md).
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request to suggest features, fix bugs, or enhance the demo.
